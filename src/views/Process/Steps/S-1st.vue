@@ -7,7 +7,7 @@
       <hr/>
       Bentuk baku simpleks:
       <div v-for="i in data.table_1st.length" :key="i" class="row">
-        <div class="col-2">
+        <div class="col-4 col-sm-2 col-md-2 col-xl-2">
           <span v-if="i === 1">Fungsi Tujuan : </span>
           <span v-if="i === 2">Fungsi Kendala :</span>
         </div>

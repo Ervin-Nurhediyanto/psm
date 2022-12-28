@@ -6,7 +6,7 @@
         <div class="my-3">{{ data.text.create }}</div>
         <div class="my-3">{{ data.text.list }}</div>
         <div class="row" v-for="index in data.members.length" :key="index">
-          <div class="col-5 col-sm-5 col-md-4 col-xl-3 p-0 px-3">
+          <div class="col-6 col-sm-5 col-md-4 col-xl-3 p-0 px-3">
             {{ data.members[index - 1].name }}
           </div>
           <div class="col-3 col-sm-3 col-md-3 col-xl-3 p-0">
