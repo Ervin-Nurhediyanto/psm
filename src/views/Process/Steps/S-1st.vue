@@ -6,12 +6,12 @@
     <div>
       <hr/>
       Bentuk baku simpleks:
-      <div v-for="i in data.table_1st.length" :key="i" class="row">
-        <div class="col-4 col-sm-2 col-md-2 col-xl-2">
-          <span v-if="i === 1">Fungsi Tujuan : </span>
-          <span v-if="i === 2">Fungsi Kendala :</span>
+      <div v-for="i in data.table_1st.length" :key="i" class="row w-100">
+        <div class="col-12 col-sm-12 col-md-12 col-xl-2">
+          <span v-if="i === 1"><b>Fungsi Tujuan : </b></span>
+          <span v-if="i === 2"><b>Fungsi Kendala : </b></span>
         </div>
-        <div class="col-5">
+        <div class="col-12 col-sm-12 col-md-12 col-xl-5">
           <CFDes :type_op="type_op" :i="i" :data="data" :numb_c="numb_c" :numb_v="numb_v"/>
           <CFCon :type_op="type_op" :i="i" :data="data" :numb_c="numb_c" :numb_v="numb_v"/>
         </div>

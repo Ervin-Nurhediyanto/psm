@@ -1,10 +1,12 @@
 <template>
   <div class="row-xl h-95vh d-flex justify-content-center align-items-center overflow scrollbar-none">
     <div class="col-12 col-sm-12 col-md-8 col-xl-11 h-100 px-0">
-      <form v-for="index in data.numb_it" :key="index" class="w-100 shadow mt-2 p-3 rounded bg-aqua">
+      <!-- <form v-for="index in data.numb_it" :key="index" class="w-100 shadow mt-2 p-3 rounded bg-aqua"> -->
+      <form v-for="index in data.numb_it" :key="index" class="w-100 shadow mt-2 p-3 rounded bg">
         <!-- Process Methode Primal-->
         <div class="mx-1 mb-1">Langkah {{ index }}</div>
         <S1st :index="index"/>
+        <S2nd :index="index"/>
         <TSimplex v-if="index > 1" :n="index - 2" :data="data"/>
       </form>
     </div>
@@ -15,6 +17,7 @@
 import { mapGetters, mapActions } from 'vuex'
 import TSimplex from '../../components/Templates/Tables/T-Simplex.vue'
 import S1st from './Steps/S-1st.vue'
+import S2nd from './Steps/S-2nd.vue'
 
 export default {
   name: 'Process',
@@ -33,7 +36,8 @@ export default {
   },
   components: {
     TSimplex,
-    S1st
+    S1st,
+    S2nd
   },
   computed: {
     ...mapGetters({

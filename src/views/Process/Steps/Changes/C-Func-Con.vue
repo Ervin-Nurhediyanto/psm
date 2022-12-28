@@ -3,7 +3,7 @@
     <span v-for="j in data.table_1st[i - 1].length - 3" :key="j">
       <!-- Operation = -->
       <span v-if="j === data.table_1st[i - 1].length - 3" class="px-1">=</span>
-      <span v-if="j >= numb_v && j <= numb_v + numb_c && j !== data.table_1st[i - 1].length - 3" class="px-1">+</span>
+      <span v-if="j > 1 && j !== data.table_1st[i - 1].length - 3" class="px-1">+</span>
       <!-- value variable -->
       <span class="p-0">{{ data.table_1st[i - 1][j + 1] }}</span>
       <!-- X variable -->
