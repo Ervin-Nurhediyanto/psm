@@ -7,12 +7,12 @@
         <div class="my-3">{{ data.text.create }}</div>
         <div class="my-3">{{ data.text.list }}</div>
         <div class="row">
-          <div class="col-3 p-0">
+          <div class="col-5 col-sm-3 col-md-3 col-xl-3 p-0">
             <ul v-for="index in data.members.length" :key="index">
               <li class="li-none">{{ data.members[index - 1].name }}</li>
             </ul>
           </div>
-          <div class="col-3 p-0">
+          <div class="col-3 col-sm-3 col-md-3 col-xl-3 p-0">
             <ul v-for="index in data.members.length" :key="index">
               <li class="li-none">{{ data.members[index - 1].nim }}</li>
             </ul>
