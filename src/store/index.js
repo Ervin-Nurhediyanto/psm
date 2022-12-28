@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import ClearData from './Data/Input/clear'
 import Variables from './Data/Input/variables'
 import Constraints from './Data/Input/constraints'
 import Methode from './Data/Input/methode'
@@ -20,6 +21,7 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
+    ClearData,
     Variables,
     Constraints,
     Methode,

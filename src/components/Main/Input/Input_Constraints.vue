@@ -1,8 +1,8 @@
 <template>
   <div class="row my-2 mx-1">
-    <div class="col bg-white">
-      <div class="row bg-warning">
-        <div class="col-9 col-sm-10 col-md-10 col-xl-10 d-flex align-items-center">
+    <div class="col">
+      <div class="row rounded bg-warning text-white">
+        <div class="col-9 col-sm-10 col-md-10 col-xl-10 d-flex align-items-center mt-1">
           <label class="form-label text-center">NUMBER OF CONSTRAINTS:</label>
         </div>
         <div class="col-3 col-sm-2 col-md-2 col-xl-2 p-0">

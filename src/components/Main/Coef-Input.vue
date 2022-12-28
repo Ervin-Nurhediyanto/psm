@@ -4,7 +4,14 @@
       <form class="h-100 w-100 shadow mt-2 p-3 rounded bg-info">
         <Logo/>
         <Table/>
-        <BtnSubmit :btnText="'SUBMIT'" :nameLink="'Process'"/>
+        <div class="row">
+          <div class="col">
+            <BtnCancel :btnText="'BACK'" :nameLink="'Main'"/>
+          </div>
+          <div class="col">
+            <BtnSubmit :btnText="'SUBMIT'" :nameLink="'Process'"/>
+          </div>
+        </div>
       </form>
     </div>
   </div>
@@ -14,6 +21,7 @@
 import Logo from '../Templates/Image/I-Logo.vue'
 import Table from '../Templates/Tables/T-Coef.vue'
 import BtnSubmit from '../Templates/Button/Submit.vue'
+import BtnCancel from '../Templates/Button/Cancel.vue'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -25,7 +33,8 @@ export default {
   components: {
     Logo,
     Table,
-    BtnSubmit
+    BtnSubmit,
+    BtnCancel
   },
   computed: {
     ...mapGetters({

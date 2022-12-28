@@ -1,13 +1,17 @@
 <template>
   <div class="row my-2 mx-1">
-    <div class="col bg-white">
-      <div class="row bg-warning">
-        <div class="col-9 col-sm-10 col-md-10 col-xl-10 d-flex align-items-center bg-white">
-          <label class="form-label">METODE SIMPLEKS</label>
+    <div class="col">
+      <div class="row rounded bg-white">
+        <div class="col-9 col-sm-10 col-md-10 col-xl-10 d-flex align-items-center">
+          <label class="form-label my-1">METODE SIMPLEKS</label>
         </div>
-        <div class="col-3 col-sm-2 col-md-2 col-xl-2 p-0 bg-danger">
+        <div class="col-3 col-sm-2 col-md-2 col-xl-2 p-0 rounded bg-warning">
           <div class="dropdown">
-            <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button
+            class="w-100 my-1 btn btn-transparent dropdown-toggle font-12px text-white"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
               {{ type_meth }}
             </button>
             <div v-for="index in type_option.length" :key="index" >

@@ -1,5 +1,5 @@
 <template>
-  <div class="row-xl h-95vh d-flex justify-content-center align-items-center overflow scrollbar-none bg-success">
+  <div class="row-xl h-95vh d-flex justify-content-center align-items-center overflow scrollbar-none">
     <div class="col-12 col-sm-12 col-md-8 col-xl-11 px-0 bg-danger">
       <form v-for="index in data.numb_it" :key="index" class="h-100 w-100 shadow mt-2 p-3 rounded bg-info">
         <!-- Process Methode Primal-->

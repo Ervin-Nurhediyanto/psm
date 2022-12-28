@@ -1,17 +1,19 @@
 <template>
   <div class="col-12 h-100vh">
     <Navbar/>
-    <router-view />
+    <TText/>
   </div>
 </template>
 
 <script>
 import Navbar from '../../components/Navbar/navbar.vue'
+import TText from '../../components/Templates/About/Text.vue'
 
 export default {
-  name: 'Home',
+  name: 'About',
   components: {
-    Navbar
+    Navbar,
+    TText
   }
 }
 </script>

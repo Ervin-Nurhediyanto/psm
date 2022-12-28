@@ -1,5 +1,5 @@
 <template>
-  <div class="col-12 h-95vh bg-white">
+  <div class="col-12 h-95vh">
     <Coef/>
   </div>
 </template>
