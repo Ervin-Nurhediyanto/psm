@@ -1,8 +1,7 @@
 <template>
   <div class="row-xl h-95vh d-flex justify-content-center align-items-center overflow scrollbar-none">
     <div class="col-12 col-sm-12 col-md-8 col-xl-11 h-100 px-0">
-      <!-- <form v-for="index in data.numb_it" :key="index" class="w-100 shadow mt-2 p-3 rounded bg-aqua"> -->
-      <form v-for="index in data.numb_it" :key="index" class="w-100 shadow mt-2 p-3 rounded bg">
+      <form v-for="index in data.numb_it" :key="index" class="w-100 shadow mt-2 p-3 rounded bg-transparant">
         <!-- Process Methode Primal-->
         <div class="mx-1 mb-1">Langkah {{ index }}</div>
         <S1st :index="index"/>
