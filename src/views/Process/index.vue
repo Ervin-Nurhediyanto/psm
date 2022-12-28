@@ -7,7 +7,10 @@
         <div class="mx-1 mb-1">Langkah {{ index }}</div>
         <S1st :index="index"/>
         <S2nd :index="index"/>
+        <SIts :index="index" :nData="data.numb_it"/>
+        <SFin :index="index" :nData="data.numb_it"/>
         <TSimplex v-if="index > 1" :n="index - 2" :data="data"/>
+        <SRes :index="index" :nData="data.numb_it" :data="data"/>
       </form>
     </div>
   </div>
@@ -18,6 +21,9 @@ import { mapGetters, mapActions } from 'vuex'
 import TSimplex from '../../components/Templates/Tables/T-Simplex.vue'
 import S1st from './Steps/S-1st.vue'
 import S2nd from './Steps/S-2nd.vue'
+import SIts from './Steps/S-Its.vue'
+import SFin from './Steps/S-Fin.vue'
+import SRes from './Steps/S-Res.vue'
 
 export default {
   name: 'Process',
@@ -37,7 +43,10 @@ export default {
   components: {
     TSimplex,
     S1st,
-    S2nd
+    S2nd,
+    SIts,
+    SFin,
+    SRes
   },
   computed: {
     ...mapGetters({
