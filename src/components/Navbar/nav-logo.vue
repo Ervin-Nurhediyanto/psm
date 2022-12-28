@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import image from '../../assets/Gear.gif'
 
 export default {
@@ -20,9 +21,16 @@ export default {
     }
   },
   methods: {
+    ...mapActions([
+      'clearData',
+      'add_type_meth'
+    ]),
     handleClick () {
-      this.$router.replace({
-        name: 'Home'
+      this.clearData().then((res) => {
+        this.add_type_meth('PRIMAL')
+        this.$router.replace({
+          name: 'Home'
+        })
       })
     }
   }

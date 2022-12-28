@@ -1,21 +1,16 @@
 <template>
   <div class="row-xl h-95vh d-flex justify-content-center align-items-center">
     <div class="col-12 col-sm-12 col-md-8 col-xl-10 px-0">
-      <!-- <div class="h-100 w-100 mt-2 p-3 shadow rounded bg-dark-grey"> -->
-      <div class="h-100 w-100 mt-2 p-3 shadow rounded bg-aqua">
-      <div class="my-3">{{ data.text.intro }}</div>
+      <div class="h-80vh  w-100 p-3 shadow rounded scrollbar-none bg-aqua">
+        <div class="my-3">{{ data.text.intro }}</div>
         <div class="my-3">{{ data.text.create }}</div>
         <div class="my-3">{{ data.text.list }}</div>
-        <div class="row">
-          <div class="col-5 col-sm-3 col-md-3 col-xl-3 p-0">
-            <ul v-for="index in data.members.length" :key="index">
-              <li class="li-none">{{ data.members[index - 1].name }}</li>
-            </ul>
+        <div class="row" v-for="index in data.members.length" :key="index">
+          <div class="col-5 col-sm-5 col-md-4 col-xl-3 p-0 px-3">
+            {{ data.members[index - 1].name }}
           </div>
           <div class="col-3 col-sm-3 col-md-3 col-xl-3 p-0">
-            <ul v-for="index in data.members.length" :key="index">
-              <li class="li-none">{{ data.members[index - 1].nim }}</li>
-            </ul>
+            {{ data.members[index - 1].nim }}
           </div>
         </div>
       </div>

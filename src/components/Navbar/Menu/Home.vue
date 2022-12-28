@@ -5,12 +5,21 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name: 'Nav-Menu-Home',
   methods: {
+    ...mapActions([
+      'clearData',
+      'add_type_meth'
+    ]),
     handleClick () {
-      this.$router.replace({
-        name: 'Home'
+      this.clearData().then((res) => {
+        this.add_type_meth('PRIMAL')
+        this.$router.replace({
+          name: 'Home'
+        })
       })
     }
   }
