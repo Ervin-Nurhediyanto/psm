@@ -55,12 +55,24 @@ export default {
       'add_type_op'
     ]),
     handleChange () {
-      if (this.typeOp === 'MAX') {
-        this.typeOp = 'MIN'
-      } else {
-        this.typeOp = 'MAX'
+      // if (this.typeOp === 'MAX') {
+      //   this.typeOp = 'MIN'
+      // } else {
+      //   this.typeOp = 'MAX'
+      // }
+      // this.add_type_op(this.typeOp)
+      const Toast = (icon, title) => {
+        this.$swal.mixin().fire({
+          icon: icon,
+          title: title,
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true
+        })
       }
-      this.add_type_op(this.typeOp)
+      Toast('error', 'Opsi Minimum belum tersedia')
     },
     handleSubmit (index) {
       this.data[index[0]][index[1]] = Number(this.data[index[0]][index[1]])
