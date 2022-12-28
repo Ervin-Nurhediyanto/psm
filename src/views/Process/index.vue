@@ -1,9 +1,11 @@
 <template>
   <div class="row-xl h-95vh d-flex justify-content-center align-items-center overflow scrollbar-none">
-    <div class="col-12 col-sm-12 col-md-8 col-xl-11 px-0 bg-danger">
-      <form v-for="index in data.numb_it" :key="index" class="h-100 w-100 shadow mt-2 p-3 rounded bg-info">
+    <div class="col-12 col-sm-12 col-md-8 col-xl-11 h-100 px-0">
+      <form v-for="index in data.numb_it" :key="index" class="w-100 shadow mt-2 p-3 rounded bg-aqua">
         <!-- Process Methode Primal-->
-        <TSimplex :n="index - 1" :data="data"/>
+        <div class="mx-1 mb-1">Langkah {{ index }}</div>
+        <S1st :index="index"/>
+        <TSimplex v-if="index > 1" :n="index - 2" :data="data"/>
       </form>
     </div>
   </div>
@@ -12,6 +14,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex'
 import TSimplex from '../../components/Templates/Tables/T-Simplex.vue'
+import S1st from './Steps/S-1st.vue'
 
 export default {
   name: 'Process',
@@ -24,12 +27,13 @@ export default {
         key_rows: [],
         key_numbs: [],
         isOptimal: false,
-        numb_it: 5
+        numb_it: 2
       }
     }
   },
   components: {
-    TSimplex
+    TSimplex,
+    S1st
   },
   computed: {
     ...mapGetters({
@@ -78,6 +82,7 @@ export default {
     this.parseData(this.keyCols, 'key_cols')
     this.parseData(this.keyRows, 'key_rows')
     this.parseData(this.keyNumbs, 'key_numbs')
+    this.data.numb_it += this.data.table_it.length
   }
 }
 </script>

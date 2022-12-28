@@ -1,7 +1,7 @@
 <template>
   <table class="row mx-1 bg-white">
     <tr v-for="iR in numbC + 2" :key="iR" class="p-0">
-      <th v-for="iC in numbC + numbV + 4" :key="iC" class="w-80px px-1 border border-dark text-center">
+      <th v-for="iC in numbC + numbV + 4" :key="iC" class="w-90px px-1 border border-dark text-center">
         <Row1st :iR="iR" :iC="iC" :numbV="numbV" :numbC="numbC"/>
         <Col1st :iR="iR" :iC="iC" :numbV="numbV" :numbC="numbC" :n="n" :data="data"/>
         <TData :iR="iR" :iC="iC" :n="n" :data="data" />

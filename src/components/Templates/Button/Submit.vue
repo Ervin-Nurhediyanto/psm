@@ -168,12 +168,32 @@ export default {
         this.add_table_1st(JSON.stringify(this.data.table_1st))
       }
     },
+    handleChangeVD (n, dataTable) {
+      const data = dataTable
+      const numbV = this.numb_v
+      const numbC = this.numb_c
+      const keyCol = this.data.key_cols[n]
+      const keyRow = this.data.key_rows[n]
+      for (let i = 0; i < data.length; i++) {
+        for (let j = 0; j < data[i].length; j++) {
+          if (j === 0 && i === keyRow) {
+            if (keyCol - 1 <= numbV) {
+              data[i][j] = ['X', keyCol - 1]
+            } else if (keyCol - 1 <= (numbV + numbC)) {
+              data[i][j] = ['S', keyCol - numbV]
+            }
+          }
+        }
+      }
+    },
     handleProcess () {
       let n = 0
       while (this.data.isOptimal === false) {
         if (n === 0) {
           this.data.table_it.push([])
           const data = this.data.table_1st
+          // Change VD
+          this.handleChangeVD(n, data)
           // Change Number of New Row
           this.changeNR(n, data)
           // Change Non Number of New Table Key Col
@@ -191,6 +211,8 @@ export default {
             return value
           })
           const data = dataParse[n - 1]
+          // Change VD
+          this.handleChangeVD(n, data)
           // Change Number of New Row
           this.changeNR(n, data)
           // Change Non Number of New Table Key Col
