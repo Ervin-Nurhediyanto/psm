@@ -3,7 +3,7 @@
     <div class="col-12 col-sm-12 col-md-8 col-xl-10 px-0">
       <!-- <div class="h-100 w-100 mt-2 p-3 shadow rounded bg-dark-grey"> -->
       <div class="h-100 w-100 mt-2 p-3 shadow rounded bg-aqua">
-      <div class="mt-1 mb-3">{{ data.text.intro }}</div>
+      <div class="my-3">{{ data.text.intro }}</div>
         <div class="my-3">{{ data.text.create }}</div>
         <div class="my-3">{{ data.text.list }}</div>
         <div class="row">
