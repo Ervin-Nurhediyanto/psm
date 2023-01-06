@@ -146,12 +146,18 @@ export default {
             }
           }
         }
-        // Choose Key Row Max Function
+        // Choose Key Row
         for (let i = 0; i < this.data.table_1st.length; i++) {
           const numbOfIndex = this.data.table_1st[i][this.data.table_1st[i].length - 1]
           if (i > 0) {
             if (keyRow === 0) {
               if (numbOfIndex > 0) {
+                keyRow = i
+                numberKeyRow = numbOfIndex
+              }
+              // zero condition
+              const numbOfKeyCol = this.data.table_1st[i][keyCol]
+              if (numbOfIndex === 0 && numbOfKeyCol > 0) {
                 keyRow = i
                 numberKeyRow = numbOfIndex
               }
@@ -161,6 +167,12 @@ export default {
                   keyRow = i
                   numberKeyRow = numbOfIndex
                 }
+              }
+              // zero condition
+              const numbOfKeyCol = this.data.table_1st[i][keyCol]
+              if (numbOfIndex === 0 && numbOfKeyCol > 0) {
+                keyRow = i
+                numberKeyRow = numbOfIndex
               }
             }
           }
@@ -358,12 +370,24 @@ export default {
                 keyRow = i
                 keyRowNumb = indNumb
               }
+              // zero condition
+              const keyColNumb = this.data.table_1st[i][this.keyCols[n]]
+              if (indNumb === 0 && keyColNumb > 0) {
+                keyRow = i
+                keyRowNumb = indNumb
+              }
             } else {
               if (indNumb > 0) {
                 if (indNumb < keyRowNumb) {
                   keyRow = i
                   keyRowNumb = indNumb
                 }
+              }
+              // zero condition
+              const keyColNumb = this.data.table_1st[i][this.keyCols[n]]
+              if (indNumb === 0 && keyColNumb > 0) {
+                keyRow = i
+                keyRowNumb = indNumb
               }
             }
           }
