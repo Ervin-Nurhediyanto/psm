@@ -371,7 +371,8 @@ export default {
                 keyRowNumb = indNumb
               }
               // zero condition
-              const keyColNumb = this.data.table_1st[i][this.keyCols[n]]
+              // const keyColNumb = this.data.table_1st[i][this.keyCols[n]]
+              const keyColNumb = this.data.table_1st[i][this.data.key_cols[n]]
               if (indNumb === 0 && keyColNumb > 0) {
                 keyRow = i
                 keyRowNumb = indNumb
@@ -384,7 +385,7 @@ export default {
                 }
               }
               // zero condition
-              const keyColNumb = this.data.table_1st[i][this.keyCols[n]]
+              const keyColNumb = this.data.table_1st[i][this.data.key_cols[n]]
               if (indNumb === 0 && keyColNumb > 0) {
                 keyRow = i
                 keyRowNumb = indNumb
