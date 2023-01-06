@@ -11,7 +11,7 @@
           <span v-if="i === 1"><b>Fungsi Tujuan : </b></span>
           <span v-if="i === 2"><b>Fungsi Kendala : </b></span>
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-xl-5">
+        <div class="col-12 col-sm-12 col-md-12 col-xl-10">
           <CFDes :type_op="type_op" :i="i" :data="data" :numb_c="numb_c" :numb_v="numb_v"/>
           <CFCon :type_op="type_op" :i="i" :data="data" :numb_c="numb_c" :numb_v="numb_v"/>
         </div>
