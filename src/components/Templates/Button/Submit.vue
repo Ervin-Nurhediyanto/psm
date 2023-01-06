@@ -145,12 +145,16 @@ export default {
           const numbOfIndex = this.data.table_1st[i][this.data.table_1st[i].length - 1]
           if (i > 0) {
             if (keyRow === 0) {
-              keyRow = i
-              numberKeyRow = numbOfIndex
-            } else {
-              if (numbOfIndex < numberKeyRow) {
+              if (numbOfIndex > 0) {
                 keyRow = i
                 numberKeyRow = numbOfIndex
+              }
+            } else {
+              if (numbOfIndex > 0) {
+                if (numbOfIndex < numberKeyRow) {
+                  keyRow = i
+                  numberKeyRow = numbOfIndex
+                }
               }
             }
           }

@@ -46,7 +46,7 @@ export default {
             nim: '(1721600023)'
           },
           {
-            name: 'Lulu Niswatun',
+            name: 'Lulu Niswatun Khasanah',
             nim: '(1721600017)'
           },
           {
