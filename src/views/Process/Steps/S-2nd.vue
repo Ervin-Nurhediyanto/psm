@@ -5,7 +5,7 @@
     </div>
     <hr/>
     <div class="mx-1 mb-1">
-      Menentukan kolom kunci (kolom kunci ditandai dengan angka <span class="text-success"><b>hijau</b></span>): Untuk kasus maksimum, pilih angka negatif terbesar pada baris Z.
+      Menentukan kolom kunci (kolom kunci ditandai dengan angka <span class="text-success"><b>hijau</b></span>): Untuk kasus maksimum, pilih angka negatif terbesar pada baris Z. Untuk kasus minimum, pilih angka positif terbesar pada baris Z.
     </div>
     <hr/>
     <div class="mx-1 mb-1">

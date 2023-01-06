@@ -121,11 +121,17 @@ export default {
               // Number of NK
               this.data.table_1st[i].push(data[i][data[i].length - 1])
             } else if (j === numbRol) {
-              // Choose Key Col Max Function
+              // Choose Key Col
               if (i === 0) {
                 for (let k = 0; k < this.data.table_1st[i].length - 1; k++) {
                   if (k > 1) {
-                    if (this.data.table_1st[i][k] < numberKeyCol) {
+                    // Max Function
+                    if (this.type_op === 'MAX' && this.data.table_1st[i][k] < numberKeyCol) {
+                      keyCol = k
+                      numberKeyCol = this.data.table_1st[i][k]
+                    }
+                    // Min Function
+                    if (this.type_op === 'MIN' && this.data.table_1st[i][k] > numberKeyCol) {
                       keyCol = k
                       numberKeyCol = this.data.table_1st[i][k]
                     }
@@ -295,6 +301,11 @@ export default {
             const colNumb = data[i][j]
             // Max Function
             if (this.type_op === 'MAX' && colNumb < keyColNumb) {
+              keyCol = j
+              keyColNumb = colNumb
+            }
+            // Min Function
+            if (this.type_op === 'MIN' && colNumb > keyColNumb) {
               keyCol = j
               keyColNumb = colNumb
             }
