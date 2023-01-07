@@ -141,8 +141,12 @@ export default {
               // Number of Index
               const numbOfNK = this.data.table_1st[i][this.data.table_1st[i].length - 1]
               const numbOfKeyCol = this.data.table_1st[i][keyCol]
-              const numbOfIndex = numbOfNK / numbOfKeyCol
-              this.data.table_1st[i].push(numbOfIndex)
+              if (numbOfKeyCol !== 0) {
+                const numbOfIndex = numbOfNK / numbOfKeyCol
+                this.data.table_1st[i].push(numbOfIndex)
+              } else {
+                this.data.table_1st[i].push('INFINITY')
+              }
             }
           }
         }
@@ -155,12 +159,6 @@ export default {
                 keyRow = i
                 numberKeyRow = numbOfIndex
               }
-              // zero condition
-              const numbOfKeyCol = this.data.table_1st[i][keyCol]
-              if (numbOfIndex === 0 && numbOfKeyCol > 0) {
-                keyRow = i
-                numberKeyRow = numbOfIndex
-              }
             } else {
               if (numbOfIndex > 0) {
                 if (numbOfIndex < numberKeyRow) {
@@ -168,8 +166,15 @@ export default {
                   numberKeyRow = numbOfIndex
                 }
               }
-              // zero condition
-              const numbOfKeyCol = this.data.table_1st[i][keyCol]
+            }
+          }
+        }
+        // Choose Key Row (Zero Condition)
+        for (let i = 0; i < this.data.table_1st.length; i++) {
+          const numbOfIndex = this.data.table_1st[i][this.data.table_1st[i].length - 1]
+          const numbOfKeyCol = this.data.table_1st[i][keyCol]
+          if (i > 0) {
+            if (keyRow === 0) {
               if (numbOfIndex === 0 && numbOfKeyCol > 0) {
                 keyRow = i
                 numberKeyRow = numbOfIndex
@@ -345,13 +350,17 @@ export default {
       const data = dataTable
       for (let i = 0; i < data.length; i++) {
         for (let j = 0; j < data[i].length; j++) {
-          if (j === data[i].length - 1) {
+          if (j === data[i].length - 1 && i > 0) {
             const NK = data[i][j - 1]
             const colNumb = data[i][this.data.key_cols[n + 1]]
-            const indNumb = NK / colNumb
-            data[i][j] = indNumb
-            if (i === 0) {
-              data[i][j] = 0
+            if (colNumb !== 0) {
+              const indNumb = NK / colNumb
+              data[i][j] = indNumb
+              if (i === 0) {
+                data[i][j] = 0
+              }
+            } else {
+              data[i][j] = 'INFINITY'
             }
           }
         }
@@ -370,13 +379,6 @@ export default {
                 keyRow = i
                 keyRowNumb = indNumb
               }
-              // zero condition
-              // const keyColNumb = this.data.table_1st[i][this.keyCols[n]]
-              const keyColNumb = this.data.table_1st[i][this.data.key_cols[n]]
-              if (indNumb === 0 && keyColNumb > 0) {
-                keyRow = i
-                keyRowNumb = indNumb
-              }
             } else {
               if (indNumb > 0) {
                 if (indNumb < keyRowNumb) {
@@ -384,11 +386,22 @@ export default {
                   keyRowNumb = indNumb
                 }
               }
-              // zero condition
-              const keyColNumb = this.data.table_1st[i][this.data.key_cols[n]]
-              if (indNumb === 0 && keyColNumb > 0) {
-                keyRow = i
-                keyRowNumb = indNumb
+            }
+          }
+        }
+      }
+      // Choose Key Row (Zero Condition)
+      for (let i = 0; i < data.length; i++) {
+        for (let j = 0; j < data[i].length; j++) {
+          if (j === data[i].length - 1) {
+            const indNumb = data[i][j]
+            const keyColNumb = this.data.table_1st[i][this.data.key_cols[n]]
+            if (i > 0) {
+              if (keyRow === 0) {
+                if (indNumb === 0 && keyColNumb > 0) {
+                  keyRow = i
+                  keyRowNumb = indNumb
+                }
               }
             }
           }
